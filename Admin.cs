@@ -11,7 +11,7 @@ using System.Net.Http.Headers;
 using System.Linq;
 
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+
 
 namespace WinFormsApp1
 {
@@ -30,11 +30,7 @@ namespace WinFormsApp1
         
         
 
-        private void listView2_Click(object sender, EventArgs e)
-        {
-            var firstSelectedItem = listView2.SelectedItems[0];
-            firstSelectedItem.SubItems[1].Text = "Pobrane Passy z Bazy";
-        }
+
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -46,7 +42,7 @@ namespace WinFormsApp1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void getUsersList_Click(object sender, EventArgs e)
         {
 
             //var cities = new List<string>();
@@ -77,5 +73,23 @@ namespace WinFormsApp1
             }
 
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNewUser_Click(object sender, EventArgs e)
+        {
+            if (setNewWorkerEmail.Text == "")
+            {
+                MessageBox.Show("Podaj email nowego pracownika");
+                return;
+            }
+            string NewUserEmail = setNewWorkerEmail.Text;
+            //http post
+
+        }
+
     }
 }
