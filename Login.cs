@@ -37,7 +37,7 @@ namespace WinFormsApp1
         {
             if (txt_email.Text == "" || txt_password.Text == "")
             {
-                MessageBox.Show("Please provide email and password");
+                MessageBox.Show("Podaj proszę email i hasło!");
                 return;
             }
             try
@@ -45,32 +45,32 @@ namespace WinFormsApp1
                 //SQL connection here
   
 
-                string type = "admin";
+                string type = "worker";
                 switch (type)
                 {
                     case "admin":
-                        MessageBox.Show("Admin Login Successful!");
+                        MessageBox.Show("Zalogowano jako Admin Pomyślnie!");
                         this.Hide();
                         Admin adminForm = new Admin();
                         adminForm.Show();
                         break;
 
                     case "user":
-                        MessageBox.Show("User Login Successful!");
+                        MessageBox.Show("Zalogowano Użytkownika Pomyślnie!!");
                         this.Hide();
-                        Admin userForm = new Admin();
+                        User userForm = new User();
                         userForm.Show();
                         break;
 
                     case "worker":
-                        MessageBox.Show("Worker Login Successful!");
+                        MessageBox.Show("Zalogowano Pracownika Pomyślnie!!");
                         this.Hide();
-                        Admin workerForm = new Admin();
+                        Worker workerForm = new Worker();
                         workerForm.Show();
                         break;
 
                     default:
-                        MessageBox.Show("Login Failed!");
+                        MessageBox.Show("Logowanie Nieudane!");
                         break;
                 }
             }
